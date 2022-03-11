@@ -5,7 +5,6 @@ import './Row.css'
 const baseUrl = "https://image.tmdb.org/t/p/original/";
 
 const Row = (props) => {
-    console.log('Row rendered');
     
     const [movies, setMovies] = useState([]);
     
@@ -15,14 +14,16 @@ const Row = (props) => {
       async function fetchData() {
         // console.log(fetchUrl);
         const request = await axios.get(props.fetchUrl);
+        // console.log(request);
         setMovies(request.data.results);
+        // request.data.results.map((item) => {
+        //   console.log(item.id);
+        // });
         return request;
       }
 
       fetchData();
     }, []);
-
-    console.log(movies);
 
   return (
     <div className="row">

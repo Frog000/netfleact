@@ -23,6 +23,8 @@
     left: 20px;
     width: 80px;
     object-fit: contain;
+
+    fill: #e50914;
 }
 
 .nav__avatar {
